@@ -39,7 +39,17 @@ th {
 tr:hover{background-color: #CCCCCC}
 tr:nth-child(even) {background-color: #F2F2F2}
 
-div{
+.add {
+   font-family: Times New Roman;
+   font-size: 24px;
+   text-align:center;
+   background-color:#FFFF99;
+   color: #F08080;
+   padding: 50px;
+   border: 1px solid black;
+}
+
+.update {
    font-family: Times New Roman;
    font-size: 24px;
    text-align:center;

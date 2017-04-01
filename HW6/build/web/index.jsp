@@ -9,8 +9,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/stylesheet.css"/>
         <title>JSP Page</title>
-        <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+        
     </head>
     <body>
         <h1>LOL Champions Database</h1>

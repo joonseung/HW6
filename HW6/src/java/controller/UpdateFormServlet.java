@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package controller;
 
+import dbHelpers.ReadRecord;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -12,13 +14,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.lolChampions;
 
 /**
  *
  * @author Abc
  */
-@WebServlet(urlPatterns = {"/add"})
-public class AddForm extends HttpServlet {
+@WebServlet(name = "UpdateFormServlet", urlPatterns = {"/update"})
+public class UpdateFormServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,10 +40,10 @@ public class AddForm extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet AddForm</title>");            
+            out.println("<title>Servlet UpdateFormServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet AddForm at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet UpdateFormServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -61,7 +64,6 @@ public class AddForm extends HttpServlet {
         
         //Pass execution on to doPost
         doPost (request, response);
-        
     }
 
     /**
@@ -76,10 +78,24 @@ public class AddForm extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        String url = "/add.jsp";
+        //get the champID
+        int champID = Integer.parseInt(request.getParameter("champID"));
+        
+        //create a ReadRecord class
+        ReadRecord rr = new ReadRecord(champID);
+        
+        //use ReadRecord to get the champ data
+        rr.doRead();
+        lolChampions champ = rr.getChamp();
+        
+        //pass champ and control to updateForm.jsp
+        request.setAttribute("champ", champ);
+        
+        String url = "/updateForm.jsp";
         
         RequestDispatcher dispatcher = request.getRequestDispatcher(url);
-        dispatcher.forward (request, response); 
+        dispatcher.forward(request, response);
+        
     }
 
     /**

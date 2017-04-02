@@ -12,12 +12,12 @@
         <h1>Update A Champion Record</h1>
         
         <div class="update">
-        <form name="updateForm" action="updateFriend" method="get">
+        <form name="updateForm" action="updateChamp" method="get">
             
             <table>
                 <tr>
                     <td> Champ ID:</td>
-                    <td><input type ="text" name="champName" value="<%= champ.getChampID() %>"/></td>
+                    <td><input type ="text" name="champID" value="<%= champ.getChampID() %>"/></td>
                 </tr>
                 
                 <tr>

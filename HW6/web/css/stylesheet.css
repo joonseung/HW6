@@ -1,6 +1,5 @@
 body {
-	color: black;
-	background-color: #D2B48C;
+	color: black; background-color: #D2B48C;
 	font-size: 12pt;
 	font-family: arial,verdana,sans-serif;
 	text-align: center;
@@ -58,3 +57,5 @@ tr:nth-child(even) {background-color: #F2F2F2}
    padding: 50px;
    border: 1px solid black;
 }
+
+input[readonly] {background-color:gray;}

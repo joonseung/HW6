@@ -17,7 +17,7 @@
             <table>
                 <tr>
                     <td> Champ ID:</td>
-                    <td><input type ="text" name="champID" value="<%= champ.getChampID() %>"/></td>
+                    <td><input type ="text" name="champID" value="<%= champ.getChampID() %>" readonly/></td>
                 </tr>
                 
                 <tr>

@@ -63,6 +63,7 @@ public class SearchQuery {
         
  }
  
+ 
  public String getHTMLTable(){
         
         String table = "";
@@ -138,7 +139,7 @@ public class SearchQuery {
                 table += "</tr>";
             }
         } catch (SQLException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         

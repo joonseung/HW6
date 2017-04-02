@@ -26,33 +26,30 @@ public class ReadQuery {
     
     public ReadQuery() {
         
-    Properties props = new Properties(); 
-    InputStream instr = getClass().getResourceAsStream("dbConn.properties");
-        try {
-            props.load(instr);
-        } catch (IOException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            instr.close();
-        } catch (IOException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    
-    String driver = props.getProperty("driver.name");
-    String url = props.getProperty("server.name");
-    String username = props.getProperty("user.name");
-    String passwd = props.getProperty("user.password");
-        try {
+    try{
+            Properties props = new Properties(); 
+            InputStream instr = getClass().getResourceAsStream("dbConn.properties");
+            try {
+                props.load(instr);
+            } catch (IOException ex) {
+                Logger.getLogger(AddQuery.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            try {
+                instr.close();
+            } catch (IOException ex) {
+                Logger.getLogger(AddQuery.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            String driver = props.getProperty("driver.name");
+            String url = props.getProperty("server.name");
+            String username = props.getProperty("user.name");
+            String passwd = props.getProperty("user.password");
             Class.forName(driver);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
             conn = DriverManager.getConnection(url, username, passwd);
-        } catch (SQLException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(AddQuery.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(AddQuery.class.getName()).log(Level.SEVERE, null, ex);
+            }
     
     }
     

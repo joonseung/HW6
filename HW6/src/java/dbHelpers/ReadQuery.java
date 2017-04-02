@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dbHelpers;
 
 import java.io.IOException;
@@ -55,9 +50,9 @@ public class ReadQuery {
     
     public void doRead(){
         
+        String query = "Select *from lolChampions ORDER BY champID ASC";
+        
         try {
-            String query = "Select * from lolChampions";
-            
             PreparedStatement ps = conn.prepareStatement(query);
             this.results = ps.executeQuery();
             

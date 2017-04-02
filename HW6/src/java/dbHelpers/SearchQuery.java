@@ -52,10 +52,10 @@ public class SearchQuery {
  public void doSearch(String champName){
  
      try {
-         String query = "SELECT * FROM lolChampions WHERE champName LIKE ?";
+         String query = "SELECT * FROM lolChampions WHERE UPPER(champName) LIKE ? ORDER BY champID ASC";
          
          PreparedStatement ps = conn.prepareStatement(query);
-         ps.setString(1,"%" + champName + "%");
+         ps.setString(1,"%" + champName.toUpperCase() + "%");
          this.results = ps.executeQuery();
      } catch (SQLException ex) {
          Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);

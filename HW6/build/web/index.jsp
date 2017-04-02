@@ -15,6 +15,9 @@
     </head>
     <body>
         <h1>LOL Champions Database</h1>
+        
         <a href="read">View All LOL Champions</a>
+        <br><br>
+        <a href="search.jsp"> Search Champions </a>
     </body>
 </html>

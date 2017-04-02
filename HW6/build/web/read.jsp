@@ -17,6 +17,8 @@
         <br><br>
         
         <a href ="add"> Add A New Champion </a>
+        <br><br>
+        <a href="search.jsp"> Search Champions</a>
         
     </body>
 </html>
